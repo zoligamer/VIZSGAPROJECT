@@ -1,0 +1,74 @@
+/* Alap stílusok */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f0f0f0, #e6e6e6); /* Gradiensek a háttérben */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+}
+
+header {
+    background-color: #dcdcdc; /* Szürke háttér */
+    color: #003366; /* Sötétkék szöveg */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background-color: #dcdcdc;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Jobbra igazítás */
+    align-items: center; /* Vertikális középre igazítás */
+}
+
+nav a {
+    color: #003366; /* Hivatkozás szín */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #009e96; /* Hivatkozás hover szín */
+}
+
+.language-selector {
+    display: flex;
+    align-items: center; /* Vertikális középre igazítás */
+}
+
+.flag-icon {
+    width: 20px; /* Zászló ikon mérete */
+    height: auto; /* Arányos méret */
+    margin-right: 5px; /* Kicsi távolság a zászló és a szöveg között */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section h2 {
+    color: #00509e;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #333; /* Szürke háttér */
+    color: #ffffff; /* Sötétkék szöveg */
+    text-align: center;
+    padding: 10px;
+}
