@@ -1,0 +1,103 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname ISP-R1
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+ipv6 dhcp pool DS-ISP
+ address prefix ACDC:8008:69::/64 lifetime 172800 86400
+ dns-server ACDC:8008:420::2
+ domain-name isp.mhd.com
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FTX1524JOAR-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ ip address 200.200.200.1 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address ACDC:8008:420::1/64
+!
+interface GigabitEthernet0/1
+ ip address 192.255.0.254 255.255.255.0
+ ip helper-address 200.200.200.2
+ duplex auto
+ speed auto
+ ipv6 address FE80::1 link-local
+ ipv6 address ACDC:8008:69::1/64
+ ipv6 nd managed-config-flag
+ ipv6 dhcp server DS-ISP
+!
+interface GigabitEthernet0/2
+ ip address 200.200.100.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface Serial0/0/0
+ description >>>To 3 OFFICE NETWORK >>>
+ ip address 209.220.200.1 255.255.255.252
+!
+interface Serial0/0/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
